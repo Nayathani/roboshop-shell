@@ -38,13 +38,13 @@ curl -L -o /tmp/shipping.zip https://roboshop-builds.s3.amazonaws.com/shipping.z
 
 VALIDATE $? "Downloading shipping artifact"
 
-unzip /tmp/shipping.zip &>>$LOGFILE
-
-VALIDATE $? "Unzipping Shipping"
-
 cd /app &>>$LOGFILE
 
 VALIDATE $? "Moving to app directory"
+
+unzip /tmp/shipping.zip &>>$LOGFILE
+
+VALIDATE $? "Unzipping Shipping"
 
 mvn clean package &>>$LOGFILE
 
