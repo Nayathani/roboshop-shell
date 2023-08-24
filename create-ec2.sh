@@ -5,6 +5,8 @@ INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-0255a78c7dec726b0
 DOMAIN_NAME=joindevops.shop
+
+
 for i in "${NAMES[@]}"
 do
     if [[ $i == "mongodb" || $i == "mysql"]]
@@ -19,7 +21,7 @@ do
     echo "creating $i instance: $IP_ADDRESS"
 
     
-    aws route53 change-resource-record-sets --hosted-zone-id Z003135636O28SQEYEWTP --change-batch '
+    aws route53 change-resource-record-sets --hosted-zone-id Z098285010FMU6PDV8O9P --change-batch '
     {
             "Changes": [{
             "Action": "CREATE",
