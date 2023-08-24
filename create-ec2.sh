@@ -4,6 +4,7 @@ NAMES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping"
 INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
 SECURITY_GROUP_ID=sg-0255a78c7dec726b0
+DOMAIN_NAME=joindevops.shop
 for i in "${NAMES[@]}"
 do
     if [[ $i == "mongodb" || $i == "mysql"]]
