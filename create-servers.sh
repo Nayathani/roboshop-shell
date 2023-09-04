@@ -3,9 +3,9 @@
 NAMES=$@
 INSTANCE_TYPE=""
 IMAGE_ID=ami-03265a0778a880afb
-SECURITY_GROUP_ID=sg-0b34d8689bd628e3f
-DOMAIN_NAME=joindevops.online
-HOSTED_ZONE_ID=Z0308214GYCUYHGJHT8R
+SECURITY_GROUP_ID=sg-0255a78c7dec726b0
+DOMAIN_NAME=joindevops.shop
+HOSTED_ZONE_ID=Z003135636O28SQEYEWTP
 
 # if mysql or mongodb instance_type should be t3.medium , for all others it is t2.micro
 
@@ -13,7 +13,7 @@ for i in $@
 do  
     if [[ $i == "mongodb" || $i == "mysql" ]]
     then
-        INSTANCE_TYPE="t3.medium"
+        INSTANCE_TYPE="t3.micro"
     else
         INSTANCE_TYPE="t2.micro"
     fi
@@ -34,7 +34,3 @@ do
     }
     '
 done
-
-# imporvement
-# check instance is already created or not
-# check route53 record is already exist, if exist update, otherwise create route53 record
